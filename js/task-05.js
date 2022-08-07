@@ -5,14 +5,14 @@
 // <input type="text" id="name-input" placeholder="Please enter your name" />
 // <h1>Hello, <span id="name-output">Anonymous</span>!</h1>
 
-let inputEl = document.querySelector("#name-input");
-inputEl.addEventListener('input', onInputChange);
+const textInput = document.querySelector("#name-input");
 
-let outputEl = document.querySelector("#name-output");
+const output = document.querySelector("#name-output");
 
-function onInputChange (event) {
-    console.log(inputEl);
-    inputEl = event.currentTarget.value;
+textInput.addEventListener("input", (event) => {
+    output.textContent = event.currentTarget.value;
 
-    inputEl !== " " ? (outputEl.innerText = inputEl.trim()) : "Anonymous";
-}
+    if (event.currentTarget.value === "") {
+        output.textContent = "Anonymous";
+    }
+});

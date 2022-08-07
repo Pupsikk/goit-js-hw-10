@@ -1,18 +1,19 @@
 const form = document.querySelector(".login-form");
 
-form.addEventListener("submit", onformSubmit);
+form.addEventListener("submit", onFormSubmit);
 
-function onformSubmit(event) {
-  event.preventDefault(); // предотвращает перезагрузку страницы
-    console.log(`предотвращает перезагрузку страницы`);
+function onFormSubmit(event) {
+  event.preventDefault();
 
-  // будет собирать данные
-    const formData = new FormData(event.currentTarget);
-    console.log(formData);
-    formData.forEach((value, name) => {
-    console.log("name:", name);
-    console.log("value:", value);
-    });
-  // очищает форму после отправки
-    form.reset();
+  const {
+    elements: { email, password },
+  } = event.currentTarget;
+
+  if (email.value === "" || password.value === "") {
+    return alert("All fields must be filled!!!");
+  }
+
+  const userInfo = { email: email.value, password: password.value };
+  console.log(userInfo);
+  event.currentTarget.reset();
 }

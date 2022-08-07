@@ -1,15 +1,18 @@
-const input = document.querySelector('#validation-input')
+const input = document.querySelector("#validation-input");
 
-input.addEventListener('blur', onInputBlur)
+input.addEventListener("blur", onInputBlur);
 
 function onInputBlur() {
-    if(+input.value.length === Number(input.dataset.length)){
-        input.classList.remove('valid')
-        input.classList.add('valid')
+    if (Number(input.value.length) === +input.dataset.length) {
+        input.classList.remove("invalid");
+        input.classList.add("valid");
+        console.log("это иф: color -> green");
     } else {
-        input.classList.remove('valid')
-        input.classList.add('invalid')
+        input.classList.remove("valid");
+        input.classList.add("invalid");
+        console.log("это элсс: color -> red");
     }
-
+        console.log(Number(input.value.length));
+        console.log(input.dataset.length);
 }
 
