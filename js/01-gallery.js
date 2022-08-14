@@ -31,4 +31,29 @@ function createGalleryCardsMarkup(galleryItems) {
 
 galleryContainer.addEventListener("click", onModalMarkup);
 
+function onModalMarkup(evt) {
+    evt.preventDefault();
+        if (!evt.target.classList.contains("gallery__image")) {
+    return;
+    }
+    const instance = basicLightbox.create(
+        `<img src="${evt.target.dataset.source}" width="800" height="600">`,
+    {
+    btnOpen: () => {
+        document.addEventListener("keydown", onKeyAction);
+    },
+    btnClose: () => {
+        document.removeEventListener("keydown", onKeyAction);
+    },
+    }
+);
 
+    instance.show();
+
+    function onKeyAction({ key }) {
+    if (key === "Escape") {
+        console.log("clock");
+        instance.close();
+        }
+    }
+}
