@@ -1,5 +1,3 @@
-import throttle from 'lodash.throttle';
-
 const refs = {
   form: document.querySelector('.feedback-form'),
   textarea: document.querySelector('.feedback-form textarea'),
@@ -18,6 +16,8 @@ refs.form.addEventListener('input', throttle(onInput, 500));
 
 // Записывает значение инпутов в LocalStorage
 function onInput(e) {
+  // console.log(e.target.name);
+  // console.log(e.target.value);
   formData[e.target.name] = e.target.value;
   // console.log(formData);
   const formDatatoStringify = JSON.stringify(formData);

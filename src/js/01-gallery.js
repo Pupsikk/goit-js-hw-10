@@ -35,6 +35,15 @@ return galleryItems
     .join('');
 }
 
+imageContainer.addEventListener('click', onGalleryClick);
+
+function onGalleryClick(event) {
+    event.preventDefault();
+    const onImgClick = event.target.classList.contains('.gallery__image');
+    if (!onImgClick) {
+        return;
+    }
+}
 
 // добавление свойств
 const lightbox = new SimpleLightbox('.gallery a', {
