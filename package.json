@@ -1,32 +1,30 @@
 {
   "name": "parcel-project-template",
   "version": "2.0.0",
-  "description": "",
-  "homepage": "pupsikk.github.io/goit-js-hw-08/",
+  "description": "Модуль 10 - Взаимодействие с бекендом",
+  "homepage": "https://PNataliya.github.io/goit-js-hw-10",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-08/"
+    "build": "parcel build src/*.html --public-url /goit-js-hw-10/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
+    "url": "git+https://github.com/PNataliya/goit-js-hw-10.git"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
+    "url": "https://github.com/PNataliya/goit-js-hw-10/issues"
   },
   "dependencies": {
-    "@vimeo/player": "^2.17.1",
-    "flatpickr": "^4.6.13",
-    "lodash.throttle": "^4.1.1",
+    "lodash.debounce": "^4.0.8",
     "modern-normalize": "^1.1.0",
-    "notiflix": "^3.2.5",
-    "simplelightbox": "^2.10.3"
+    "notiflix": "^3.2.5"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
+    "@types/lodash.debounce": "^4.0.7",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
     "posthtml-include": "^1.7.4"
